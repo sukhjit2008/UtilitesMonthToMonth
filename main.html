@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utility Total Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #total {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Utility Total Calculator</h2>
+    <form id="utilityForm">
+        <label for="houseName">House Name:</label>
+        <input type="text" id="houseName" name="houseName" placeholder="Enter house name">
+
+        <label for="january">January:</label>
+        <input type="number" id="january" name="january" placeholder="Enter amount for January">
+
+        <label for="february">February:</label>
+        <input type="number" id="february" name="february" placeholder="Enter amount for February">
+
+        <label for="march">March:</label>
+        <input type="number" id="march" name="march" placeholder="Enter amount for March">
+
+        <label for="april">April:</label>
+        <input type="number" id="april" name="april" placeholder="Enter amount for April">
+
+        <label for="may">May:</label>
+        <input type="number" id="may" name="may" placeholder="Enter amount for May">
+
+        <label for="june">June:</label>
+        <input type="number" id="june" name="june" placeholder="Enter amount for June">
+
+        <label for="july">July:</label>
+        <input type="number" id="july" name="july" placeholder="Enter amount for July">
+
+        <label for="august">August:</label>
+        <input type="number" id="august" name="august" placeholder="Enter amount for August">
+
+        <label for="september">September:</label>
+        <input type="number" id="september" name="september" placeholder="Enter amount for September">
+
+        <label for="october">October:</label>
+        <input type="number" id="october" name="october" placeholder="Enter amount for October">
+
+        <label for="november">November:</label>
+        <input type="number" id="november" name="november" placeholder="Enter amount for November">
+
+        <label for="december">December:</label>
+        <input type="number" id="december" name="december" placeholder="Enter amount for December">
+
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    </form>
+
+    <div id="total"></div>
+</div>
+
+<script>
+    function calculateTotal() {
+        var houseName = document.getElementById('houseName').value;
+        var january = parseFloat(document.getElementById('january').value) || 0;
+        var february = parseFloat(document.getElementById('february').value) || 0;
+        var march = parseFloat(document.getElementById('march').value) || 0;
+        var april = parseFloat(document.getElementById('april').value) || 0;
+        var may = parseFloat(document.getElementById('may').value) || 0;
+        var june = parseFloat(document.getElementById('june').value) || 0;
+        var july = parseFloat(document.getElementById('july').value) || 0;
+        var august = parseFloat(document.getElementById('august').value) || 0;
+        var september = parseFloat(document.getElementById('september').value) || 0;
+        var october = parseFloat(document.getElementById('october').value) || 0;
+        var november = parseFloat(document.getElementById('november').value) || 0;
+        var december = parseFloat(document.getElementById('december').value) || 0;
+
+        var total = january + february + march + april + may + june + july + august + september + october + november + december;
+
+        document.getElementById('total').innerHTML = "Total utility amount for " + houseName + ": " + total.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
